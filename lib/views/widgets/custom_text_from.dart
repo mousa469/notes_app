@@ -2,25 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextForm extends StatelessWidget {
-   CustomTextForm(
+  const  CustomTextForm(
       {super.key,
       this.edgeInsetsForContentPadding,
       required this.hintText,
-      required this.controller,
-      this.suffixIcon,
-      required this.isSecured});
+      required this.controller,  this.maxLines =1,
+      
+      });
 
   final String hintText;
   final TextEditingController controller;
-  IconButton? suffixIcon;
-  bool isSecured;
-  EdgeInsets? edgeInsetsForContentPadding  ;
+  
+ 
+  final  EdgeInsets? edgeInsetsForContentPadding  ;
+  final int maxLines ; 
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       
-      obscureText: isSecured,
+      maxLines: maxLines ,
       validator: (data) {
         if (data == null || data.isEmpty) {
           return "field is required";
@@ -31,8 +32,8 @@ class CustomTextForm extends StatelessWidget {
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         
-        contentPadding:edgeInsetsForContentPadding,
-        suffixIcon: suffixIcon,
+        
+        
         suffixIconColor: Colors.white,
         errorStyle: const TextStyle(color: Colors.white),
         errorBorder: const OutlineInputBorder(
@@ -42,7 +43,7 @@ class CustomTextForm extends StatelessWidget {
         enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white)),
         hintText: hintText,
-        hintStyle: TextStyle(  color:  Colors.white),
+        hintStyle: const TextStyle(  color:  Colors.white),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
         ),

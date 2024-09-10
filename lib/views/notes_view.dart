@@ -5,7 +5,8 @@ import 'package:notes/views/widgets/custom_text_from.dart';
 import 'package:notes/views/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
-  NotesView({super.key});
+  const NotesView({super.key});
+  static String id = "note view";
 
   @override
   Widget build(BuildContext context) {
@@ -13,17 +14,16 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24)
-            ),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24)),
               context: context,
               builder: (context) {
                 return AddNoteBottomSheet();
               });
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
-      body: NotesViewBody(),
+      body: const NotesViewBody(),
     );
   }
 }
