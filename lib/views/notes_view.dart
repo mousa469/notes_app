@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notes/views/widgets/add_note_bottom_sheet.dart';
-import 'package:notes/views/widgets/custom_elevated_bottom.dart';
-import 'package:notes/views/widgets/custom_text_from.dart';
 import 'package:notes/views/widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
