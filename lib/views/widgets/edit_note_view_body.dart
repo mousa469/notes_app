@@ -4,13 +4,12 @@ import 'package:notes/views/widgets/custom_app_bar.dart';
 import 'package:notes/views/widgets/custom_text_from.dart';
 
 class EditNoteViewBody extends StatelessWidget {
-  EditNoteViewBody({super.key});
-  TextEditingController titleController = TextEditingController();
-  TextEditingController contentController = TextEditingController();
+ const  EditNoteViewBody({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return const Padding(
       padding: const EdgeInsets.symmetric(horizontal:  20),
       child: Column(
         children: [
@@ -26,14 +25,14 @@ class EditNoteViewBody extends StatelessWidget {
           ),
           CustomTextForm(
             hintText: "Title",
-            controller: titleController,
+           
           ),
           const SizedBox(
             height: 10,
           ),
           CustomTextForm(
             hintText: "Content",
-            controller: contentController,
+           
             maxLines: 5,
           ),
         ],

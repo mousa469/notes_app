@@ -3,14 +3,16 @@ import 'package:flutter/material.dart';
 class CustomTextForm extends StatelessWidget {
   const  CustomTextForm(
       {super.key,
+      this.onSaved,
       this.edgeInsetsForContentPadding,
       required this.hintText,
-      required this.controller,  this.maxLines =1,
+        this.maxLines =1,
       
       });
 
   final String hintText;
-  final TextEditingController controller;
+  final void Function(String?)? onSaved ;
+  
   
  
   final  EdgeInsets? edgeInsetsForContentPadding  ;
@@ -19,6 +21,7 @@ class CustomTextForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved ,
       
       maxLines: maxLines ,
       validator: (data) {
@@ -27,7 +30,7 @@ class CustomTextForm extends StatelessWidget {
         }
         return null;
       },
-      controller: controller,
+      
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         
